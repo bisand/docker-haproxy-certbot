@@ -88,6 +88,8 @@ docker exec haproxy-certbot certbot-certonly \
   --domain example.com \
   --domain www.example.com \
   --email nmarus@gmail.com \
+  --standalone
+  --http-01-port 8080
   --dry-run
 
 # .. or request certificate from let's encrypt using manual dns challenge.
