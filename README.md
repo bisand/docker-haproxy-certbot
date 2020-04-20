@@ -46,7 +46,7 @@ docker run -d \
   -v /docker/haproxy/config:/config \
   -v /docker/haproxy/letsencrypt:/etc/letsencrypt \
   -v /docker/haproxy/certs.d:/usr/local/etc/haproxy/certs.d \
-  nmarus/haproxy-certbot
+  bisand/haproxy-certbot
 ```
 
 It is important to note the mapping of the 3 volumes in the above command. This
@@ -87,7 +87,7 @@ name as above when it was created. If not, adjust appropriately.***
 docker exec haproxy-certbot certbot-certonly \
   --domain example.com \
   --domain www.example.com \
-  --email nmarus@gmail.com \
+  --email user@example.com \
   --standalone
   --http-01-port 8080
   --dry-run
@@ -97,7 +97,7 @@ docker exec haproxy-certbot certbot-certonly \
 docker exec -it haproxy-certbot certbot-certonly-dns \
   --domain example.com \
   --domain www.example.com \
-  --email nmarus@gmail.com \
+  --email user@example.com \
   --dry-run
 
 # create/update haproxy formatted certs in certs.d and then restart haproxy
