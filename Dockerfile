@@ -1,8 +1,8 @@
-# haproxy2.0.5 alpine with certbot
-FROM haproxy:2.0.5-alpine
+# haproxy2.1.4 alpine with certbot
+FROM haproxy:2.1.4-alpine
 
 # Install Supervisor, cron, openssl and certbot
-RUN apk --update add --no-cache supervisor dcron certbot openssl && \
+RUN apk --update add --no-cache supervisor dcron certbot openssl iproute2 libnl3-cli && \
     rm -rf /tmp/* /var/tmp/*
 
 # Setup Supervisor
